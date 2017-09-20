@@ -2,12 +2,13 @@
 
 //后端路由（根据URL的不同响应不同的页面）
 
-//header('content-type:text/html; charset=utf8');
+//header('content-type:text/html; charset=utf8');   //编码格式
 
 //echo "<div>主页面</div>";
 // include('') 在当前php页面内部嵌入一个子页面
 
 // include('./views/main/index.html');
+
 
 
 // 通过URL区分用户想访问那个页面
@@ -16,10 +17,12 @@
 
 
 
+
 // 获取地址栏中的URL
 // $path = $_SERVER['PATH_INFO'];
 //echo $path;
 //include('./views/'.$path.'.html')
+
 
 
 //array_key_exists('PATH_INFO',$_SERVER);   如果PATH_INFO在$_SERVER中存在 就是true
@@ -34,8 +37,8 @@ if(array_key_exists('PATH_INFO', $_SERVER)){
     //去掉第一个斜杠
     $str = substr($path,1); // 截完之后就是  main/index
     // 字符串分割  和js中的split方法很像
-    $ret = explode('/',$str); // 按斜杠分为几部分
-    // var_dump($ret);
+    $ret = explode('/',$str); // 按斜杠分为几部分   返回的是一个数组
+     // var_dump($ret);
     
     if(count($ret) ==2) {   // count计数
         //路由有两层
