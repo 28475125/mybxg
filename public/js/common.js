@@ -1,4 +1,4 @@
-define(['jquery','cookie'],function ($) {
+define(['jquery','template','cookie'],function ($,template) {
     /*NProgress.start();
     NProgress.done();*/
     $('.navs ul').prev('a').on('click', function () {
@@ -33,9 +33,12 @@ define(['jquery','cookie'],function ($) {
      //console.log(JSON.parse(loginInfo));
     loginInfo = loginInfo && JSON.parse(loginInfo); //如果有，并存在，就使用JSON.parse();转换成对象形式
     // 设置用户的头像信息
-    $('.aside .profile img').attr('src',loginInfo.tc_avatar);
-    $('.aside .profile h4').html(loginInfo.tc_name);
+    /*$('.aside .profile img').attr('src',loginInfo.tc_avatar);
+     $('.aside .profile h4').html(loginInfo.tc_name);*/
 
+    var tpl = ' <div class="avatar img-circle"><img src="{{tc_avatar}}"></div><h4>{{tc_name}}</h4>';
+    var html = template.render(tpl,loginInfo);
+    $('.aside .profile').html(html);
 });
 
                     
