@@ -11,6 +11,7 @@ define(['jquery','template'],function ($, template) {
             var html = template('templateTpl',data);
             //console.log(html);
             $('#teacherInfo').html(html);
+
         }
     })
 })
