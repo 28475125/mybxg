@@ -1,7 +1,7 @@
 /**
  * Created by hy on 2017/9/20.
  */
-define(['jquery','template'],function ($, template) {
+define(['jquery','template','bootstrap'],function ($, template) {
     $.ajax({
         type:'get',
         url:'/api/teacher',
@@ -34,6 +34,25 @@ define(['jquery','template'],function ($, template) {
                                 $(that).text('启用');
                             }
                         }
+                    }
+                })
+            })
+
+            //讲师查看功能
+            $('.preivew').click(function () {
+                var td = $(this).closest('td');     //  closest 查找最近的父级元素
+                var tcId = td.attr('data-tcId');
+                //console.log(tcId);
+                $.ajax({
+                    type:'get',
+                    url:'/api/teacher/view',
+                    data:{tc_id:tcId},
+                    dataType:'json',
+                    success:function (data) {
+                        //console.log(data);
+                        var html = template('modulteacher',data);
+                        $('#teachermodul').html(html);
+                        $('#teacherModal').modal();     //此处要依赖bootstrap文件
                     }
                 })
             })
