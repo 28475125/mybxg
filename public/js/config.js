@@ -7,18 +7,23 @@ require.config({
         bootstrap:'bootstrap/js/bootstrap.min',
         datepicker:'bootstrap-datepicker/js/bootstrap-datepicker.min',
         language:'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        validate:'validate/jquery-validate',
+        from:'jquery-form/jquery.form',
         util : '../js/util',
         common: '../js/common',
         login:'../js/login',
         teacherlist:'../js/teacher-list',
         teacheradd:'../js/teacher-add',
     },
-    shim: {
-        bootstrap:{
-            deps:['jquery'],
+    shim : {
+        bootstrap : {
+            deps : ['jquery']
         },
-        language:{
-            deps:['jquery','datepicker'],
+        language : {
+            deps : ['jquery','datepicker']
+        },
+        validate : {
+            deps : ['jquery']
         }
     }
 });

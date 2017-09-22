@@ -12,8 +12,7 @@ define(['jquery','template','bootstrap'],function ($, template) {
             //console.log(html);
             $('#teacherInfo').html(html);
 
-<<<<<<< HEAD
-=======
+
             //启用和注销功能
             $('.eod').click( function () {
                 var that = this;
@@ -58,7 +57,6 @@ define(['jquery','template','bootstrap'],function ($, template) {
                     }
                 })
             })
->>>>>>> teacher
         }
     })
 })
