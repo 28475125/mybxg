@@ -30,6 +30,7 @@ define(['jquery','template','cookie'],function ($,template) {
     //设置用户的头像信息
     // console.log($.cookie('loginInfo'));
     var loginInfo = $.cookie('loginInfo');
+    //console.log(loginInfo);
      //console.log(JSON.parse(loginInfo));
     loginInfo = loginInfo && JSON.parse(loginInfo); //如果有，并存在，就使用JSON.parse();转换成对象形式
     // 设置用户的头像信息
