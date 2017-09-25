@@ -1,7 +1,6 @@
-/**
- * Created by hy on 2017/9/20.
- */
-define(['jquery','template','bootstrap'],function ($, template) {
+define(['jquery','template','util','bootstrap'],function ($, template, util) {
+    //设置导航栏选中高亮
+    util.setMenu(location.pathname);
     $.ajax({
         type:'get',
         url:'/api/teacher',

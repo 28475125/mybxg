@@ -18,6 +18,8 @@ require.config({
         teacherlist:'../js/teacher-list',     //讲师管理
         teacheradd:'../js/teacher-add',     // 讲师添加
         settings:'../js/settings',          //个人中心
+        index : '../js/index',              //主页
+        courselist : '../js/course-list',   //课程列表
     },
     shim : {
         bootstrap : {

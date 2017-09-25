@@ -1,4 +1,5 @@
 define(['jquery','template','ckeditor','uploadify','region','datepicker','language','validate','from'],function ($,template,CKEDITOR) {
+
     // 发送 个人中心  表单数据
     $.ajax({
         type:'get',
