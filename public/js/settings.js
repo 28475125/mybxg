@@ -1,12 +1,12 @@
-define(['jquery','template','uploadify','region'],function ($,template) {
+define(['jquery','template','ckeditor','uploadify','region','datepicker','language'],function ($,template,CKEDITOR) {
     // 发送 个人中心  表单数据
     $.ajax({
         type:'get',
         url:'/api/teacher/profile',
         dataType:'json',
         success: function (data) {
-            //console.log(data);
-            var html = template('teacherSettingsTpl', data);
+            console.log(data);
+            var html = template('teacherSettingsTpl', data.result);
             //console.log(html);
             $('#teacherSettings').html(html);
 
@@ -30,7 +30,15 @@ define(['jquery','template','uploadify','region'],function ($,template) {
             //处理省市级三级联动
             $('#pcd').region({
                 url : '/public/assets/jquery-region/region.json'
-            })
+            });
+
+            //处理富文本
+            CKEDITOR.replace('IntroDuce',{
+                toolbarGroups : [
+                    { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
+                ]
+            });
         }
     })
 })
