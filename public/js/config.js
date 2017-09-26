@@ -20,6 +20,8 @@ require.config({
         settings:'../js/settings',          //个人中心
         index : '../js/index',              //主页
         courselist : '../js/course-list',   //课程列表
+        courseadd : '../js/course-add',     //课程添加
+        coursebasic : '../js/course-basic',     //课程添加一
     },
     shim : {
         bootstrap : {
